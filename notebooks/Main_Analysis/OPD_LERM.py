@@ -18,7 +18,7 @@ warnings.filterwarnings('ignore')
 group_names = ['ODP 925','ODP 927','ODP 929','ODP 846','ODP 849']
 
 
-def cell_4():
+def cell_4(group_names):
     series_list = []
     color_list = sns.color_palette('colorblind')
 
@@ -140,10 +140,10 @@ def cell_6(ms):
         lp_series = lp_series.convert_time_unit('ka')
         lp_fi[series.label] = lp_series
 
-    return lp_fi, lp_series
+    return ms, lp_fi, lp_series
 
 
-def cell_7(group_names):
+def cell_7(ms, group_names, lp_fi, lp_series, color_list):
     SMALL_SIZE = 16
     MEDIUM_SIZE = 20
     BIGGER_SIZE = 25
@@ -216,9 +216,8 @@ def cell_8(transition_timing):
 def cell_9(transition_timing):
     np.std(transition_timing)
 
-
-color_list, ms = cell_4()
-lp_fi, lp_series = cell_6(ms)
-transition_timing = cell_7(group_names)
+color_list, ms = cell_4(group_names)
+ms, lp_fi, lp_series = cell_6(ms)
+transition_timing = cell_7(ms, group_names, lp_fi, lp_series, color_list)
 cell_8(transition_timing)
 cell_9(transition_timing)
