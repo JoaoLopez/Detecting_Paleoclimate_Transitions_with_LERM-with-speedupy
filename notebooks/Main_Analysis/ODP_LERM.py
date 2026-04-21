@@ -48,7 +48,7 @@ def cell_4(group_names):
 
     ms = pyleo.MultipleSeries([series.slice((min_time,max_time)).interp() for series in series_list])
     fig,ax = ms.stackplot(colors=color_list[:len(ms.series_list)],figsize=(8,10))
-
+    fig.savefig('out1.png')
     return color_list, ms
 
 
@@ -205,7 +205,7 @@ def cell_7(ms, group_names, lp_fi, lp_series, color_list):
         ax.xaxis.label.set_fontsize(25)
         ax.yaxis.label.set_fontsize(25)
         ax.set_yticks(ticks=np.array([0,5]))
-    
+    fig.savefig('out2.png')
     return transition_timing
 
 
