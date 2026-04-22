@@ -170,11 +170,11 @@ def cell_7(ms, group_names, lp_fi, lp_series, color_list):
 
 @maybe_deterministic
 def cell_8(transition_timing):
-    np.mean(transition_timing)
+    print(np.mean(transition_timing))
 
 @maybe_deterministic
 def cell_9(transition_timing):
-    np.std(transition_timing)
+    print(np.std(transition_timing))
 
 @initialize_speedupy
 def main():
